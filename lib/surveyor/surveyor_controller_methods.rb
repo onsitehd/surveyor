@@ -71,7 +71,7 @@ module Surveyor
     end
 
     def update
-      question_ids_for_dependencies = (params[:r] || []).map{|k,v| v["question_id"] }.compact.uniq
+      question_ids_for_dependencies = (params[:r] || {}).values.map { |v| v['question_id'] }.compact.uniq
       saved = load_and_update_response_set_with_retries
 
       return redirect_with_message(surveyor_finish, :notice, t('surveyor.completed_survey')) if saved && params[:finish]
