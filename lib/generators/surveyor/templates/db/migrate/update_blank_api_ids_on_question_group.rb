@@ -1,10 +1,10 @@
 # encoding: UTF-8
-class Survey < ActiveRecord::Base; end
-class Question < ActiveRecord::Base; end
-class QuestionGroup < ActiveRecord::Base; end
-class Answer < ActiveRecord::Base; end
-class Response < ActiveRecord::Base; end
-class ResponseSet < ActiveRecord::Base; end
+class Survey < ApplicationRecord; end
+class Question < ApplicationRecord; end
+class QuestionGroup < ApplicationRecord; end
+class Answer < ApplicationRecord; end
+class Response < ApplicationRecord; end
+class ResponseSet < ApplicationRecord; end
 
 class UpdateBlankApiIdsOnQuestionGroup < ActiveRecord::Migration
   def self.up
