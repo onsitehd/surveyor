@@ -8,7 +8,6 @@ module Surveyor
       included do
         # Associations
         belongs_to :survey
-        belongs_to :user
         has_many :responses, :dependent => :destroy
         accepts_nested_attributes_for :responses, :allow_destroy => true
         attr_accessible *PermittedParams.new.response_set_attributes if defined? ActiveModel::MassAssignmentSecurity
