@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency('rails', '>= 3.2')
   s.add_dependency('haml', '~> 5.0')
-  s.add_dependency('sass')
+  s.add_dependency('sassc')
   s.add_dependency('formtastic', '~> 3.1.5')
   s.add_dependency('uuidtools', '~> 2.1')
   s.add_dependency('mustache', '~> 0.99')
