@@ -11,15 +11,14 @@
               %col{:class => cycle("odd", "even")}
             %col.post
             %tbody
-              - qs.each_slice(10) do |ten_questions| # header row every 10
-                %tr
-                  %th &nbsp;
-                  - ten_questions.first.answers.each do |a|
-                    %th
-                      = a.text_for(nil, @render_context, I18n.locale)
-                      %span.help= a.help_text_for(@render_context, I18n.locale)
-                  %th &nbsp;
-                - ten_questions.each_with_index do |q, i|
+              %tr
+                %th &nbsp;
+                - qs.first.answers.each do |a|
+                  %th
+                    = a.text_for(nil, @render_context, I18n.locale)
+                    %span.help= a.help_text_for(@render_context, I18n.locale)
+                %th &nbsp;
+                - qs.each_with_index do |q, i|
                   %tr{:id => "q_#{q.id}", :class => "q_#{renderer} #{q.css_class(@response_set)}"}
                     %th
                       = q.text_for(:pre, @render_context, I18n.locale)
