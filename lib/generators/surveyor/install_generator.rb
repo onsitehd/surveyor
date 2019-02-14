@@ -63,7 +63,7 @@ module Surveyor
 
     def assets
       directory "app/assets"
-      copy_file "vendor/assets/stylesheets/custom.sass"
+      copy_file "vendor/assets/stylesheets/custom.css"
     end
 
     def surveys

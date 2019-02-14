@@ -32,7 +32,6 @@ In keeping with the Rails team maintenance [policy] we no longer support Rails 3
 Some key dependencies are:
 
 * HAML
-* Sass
 * Formtastic
 
 A more exhaustive list can be found in the [gemspec][].
