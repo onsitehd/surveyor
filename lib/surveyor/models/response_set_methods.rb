@@ -15,7 +15,7 @@ module Surveyor
         # Validations
         validates_presence_of :survey_id
         validates_associated :responses
-        validates_uniqueness_of :access_code
+        validates_uniqueness_of :access_code, :case_sensitive => true
 
         # Derived attributes
         before_create :ensure_start_timestamp
@@ -159,7 +159,7 @@ module Surveyor
                 fail "Illegal attempt to change question for response #{api_id}."
               end
 
-              existing.update_attributes(updateable_attributes)
+              existing.update(updateable_attributes)
             else
               responses.build(updateable_attributes).tap do |r|
                 r.api_id = api_id

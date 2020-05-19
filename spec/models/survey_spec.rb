@@ -34,7 +34,7 @@ describe Survey do
     it "doesn't adjust #title when" do
       original = FactoryGirl.create(:survey, :title => "Foo")
       original.save.should be_true
-      original.update_attributes(:title => "Foo")
+      original.update(:title => "Foo")
       original.title.should == "Foo"
     end
     it "has #api_id with 36 characters by default" do
